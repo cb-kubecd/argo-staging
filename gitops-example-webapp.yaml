@@ -14,7 +14,7 @@ spec:
           value: 34.134.146.124.nip.io
     path: charts/gitops-example-webapp
     repoURL: https://github.com/swashbuck1r/gitops-example-webapp.git
-    targetRevision: v0.1.22
+    targetRevision: v0.1.30
   syncPolicy:
     automated:
       prune: true
