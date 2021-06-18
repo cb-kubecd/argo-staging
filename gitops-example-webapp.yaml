@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: node-example
+spec:
+  destination:
+    namespace: staging
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    helm:
+      parameters:
+        - name: jxRequirements.ingress.domain
+          value: 34.134.146.124.nip.io
+    path: charts/gitops-example-webapp
+    repoURL: https://github.com/swashbuck1r/gitops-example-webapp.git
+    targetRevision: v0.1.22
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
