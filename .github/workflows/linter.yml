@@ -2,8 +2,10 @@
 name: Lint Code Base
 
 on:
-  pull_request:
-    branches: [main]
+  # allow manual triggering
+  workflow_dispatch: {}
+#  pull_request:
+#    branches: [main]
 
 jobs:
   build:
