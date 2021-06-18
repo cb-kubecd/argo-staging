@@ -1,0 +1,52 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: foo
+spec:
+  destination:
+    name: ''
+    namespace: sor
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: ''
+    repoURL: 'https://charts.cloudbees.com/private/product-hub'
+    targetRevision: '1.3589'
+    chart: sor
+    helm:
+      parameters:
+        - name: sorpostgresql.enabled
+          value: 'false'
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - PruneLast=true
+      - CreateNamespace=true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: sql
+spec:
+  destination:
+    name: ''
+    namespace: sor
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: ''
+    repoURL: 'https://charts.bitnami.com/bitnami'
+    targetRevision: 9.8.12
+    chart: postgresql
+    helm:
+      parameters:
+        - name: postgresqlHost
+          value: 10.58.32.3
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
