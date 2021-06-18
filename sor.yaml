@@ -18,9 +18,9 @@ spec:
           value: 'false'
         - name: sorpostgresql.postgresqlHost
           value: '10.58.32.3'
-        - name: postgresqlUsername
+        - name: sorpostgresql.postgresqlUsername
           value: sor
-        - name: postgresqlPassword
+        - name: sorpostgresql.postgresqlPassword
           value: sor
   project: default
   syncPolicy:
