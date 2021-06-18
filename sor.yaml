@@ -16,6 +16,8 @@ spec:
       parameters:
         - name: sorpostgresql.enabled
           value: 'false'
+        - name: sorpostgresql.postgresqlHost
+          value: '10.58.32.3'
   project: default
   syncPolicy:
     automated:
