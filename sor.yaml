@@ -18,6 +18,10 @@ spec:
           value: 'false'
         - name: sorpostgresql.postgresqlHost
           value: '10.58.32.3'
+        - name: postgresqlUsername
+          value: sor
+        - name: postgresqlPassword
+          value: sor
   project: default
   syncPolicy:
     automated:
