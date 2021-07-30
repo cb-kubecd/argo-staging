@@ -14,7 +14,7 @@ spec:
           value: 34.134.146.124.nip.io
     path: charts/node-example
     repoURL: https://github.com/jstrachan/node-example.git
-    targetRevision: v0.0.76
+    targetRevision: v0.0.77
   syncPolicy:
     automated:
       prune: true
